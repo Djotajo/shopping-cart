@@ -2,3 +2,20 @@ img {
   width: 100px;
   height: 100px;
 }
+
+body {
+  width: 80%;
+  margin: auto;
+  background-color: gray;
+}
+
+nav ul {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
