@@ -1,5 +1,6 @@
 import { useState } from "react";
 import getItems from "./components/getItems";
+import { Outlet } from "react-router-dom";
 import NavItem from "./components/navItem";
 import Items from "./components/items";
 import "./App.css";
@@ -14,7 +15,7 @@ function App() {
           <NavItem name="cart" link="/cart"></NavItem>
         </ul>
       </nav>
-      <Items />
+      <Outlet></Outlet>
     </>
   );
 }
