@@ -40,7 +40,7 @@ function Items() {
       )))
     : null;
   //   console.log(list);
-  return <>{list}</>;
+  return <div className="items">{list}</div>;
 }
 
 export default Items;
