@@ -1,12 +1,23 @@
 import Rating from "react-rating";
 import { useState } from "react";
 
-function RatingWindow({ onClose }) {
-  const [rating, setRating] = useState(4);
-  const [yourRating, setYourRating] = useState(0);
-  const [prevRating, setPrevRating] = useState(0);
+function RatingWindow({
+  onClose,
+  yourRating,
+  handleSetYourRating,
+  handleSetCurrentRating,
+  currentRating,
+  prevRating,
+  handleUpdateCurrentRating,
+  handleSetPrevRating,
+  rated,
+  handleSetRated,
+}) {
+  //   const [rating, setRating] = useState(4);
+  //   const [yourRating, setYourRating] = useState(0);
+  //   const [prevRating, setPrevRating] = useState(0);
   const [reviewNumber, setReviewNumber] = useState(150);
-  const [rated, setRated] = useState(false);
+  //   const [rated, setRated] = useState(false);
   const [isRatingWindowVisible, setRatingWindowVisible] = useState(true);
 
   return (
@@ -15,21 +26,23 @@ function RatingWindow({ onClose }) {
         emptySymbol="fa fa-star-o fa-2x"
         fullSymbol="fa fa-star fa-2x"
         fractions={2}
-        initialRating={rating}
+        initialRating={yourRating}
         // {rated === false ? 0 : 5}
         onChange={(rate) => {
           if (rated === false) {
             // Handle the case where rated is false
-            setRating((rating * reviewNumber + rate) / (reviewNumber + 1));
+            handleSetCurrentRating(rate);
+            // setRating(
+            //   (currentRating * reviewNumber + rate) / (reviewNumber + 1)
+            // );
             setReviewNumber(reviewNumber + 1); // Assuming this is the first rating
-            setRated(true);
-            setYourRating(rate);
+            handleSetRated();
+            handleSetYourRating(rate);
           } else {
-            setPrevRating(yourRating);
-            setYourRating(rate);
-            setRating(
-              (rating * reviewNumber - prevRating + rate) / reviewNumber
-            );
+            handleSetPrevRating(yourRating);
+            handleSetYourRating(rate);
+            handleUpdateCurrentRating(rate);
+            console.log(yourRating);
             // Handle the case where rated is true
             // setRating((rating * reviewNumber + rate) / (reviewNumber + 1));
             // setReviewNumber(reviewNumber + 1);

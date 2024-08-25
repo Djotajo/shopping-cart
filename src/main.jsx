@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 import routes from "./components/routes";
-
+import "./normalize.css";
 import "./index.css";
 
 // createRoot(document.getElementById("root")).render(
