@@ -17,18 +17,26 @@ const StarRating = ({ currentRating, quantity }) => {
   //   }
 
   return (
-    <div>
-      <Rating
+    <div className="rating">
+      <div className="generalRating">
+        <span className="fa fa-star"></span>
+        <span>{`${rating.toFixed(1)} / 5`}</span>
+        <br />
+        <span>{reviewNumber}</span>
+      </div>
+      <div className="yourRating">
+        <span className="fa fa-star-o"></span>
+        <span>{`${yourRating} / 5`}</span>
+      </div>
+      {/* <Rating
         emptySymbol="fa fa-star-o fa-2x"
         fullSymbol="fa fa-star fa-2x"
         fractions={2}
         initialRating={currentRating}
-        // {rated === false ? 0 : 5}
         onChange={(rate) => {
           if (rated === false) {
-            // Handle the case where rated is false
             setRating((rating * reviewNumber + rate) / (reviewNumber + 1));
-            setReviewNumber(reviewNumber + 1); // Assuming this is the first rating
+            setReviewNumber(reviewNumber + 1);
             setRated(true);
             setYourRating(rate);
           } else {
@@ -37,30 +45,16 @@ const StarRating = ({ currentRating, quantity }) => {
             setRating(
               (rating * reviewNumber - prevRating + rate) / reviewNumber
             );
-            // Handle the case where rated is true
-            // setRating((rating * reviewNumber + rate) / (reviewNumber + 1));
-            // setReviewNumber(reviewNumber + 1);
           }
-
-          // setRating(
-          //   rated === false
-          //     ? rate
-          //     : (rating * reviewNumber + rate) / (reviewNumber + 1)
-          // );
-          // setReviewNumber(rated === false ? reviewNumber : reviewNumber + 1);
-
-          // setRated(rated ? true : false)
         }}
-      />
-      <Rating
+      /> */}
+      {/* <Rating
         emptySymbol="fa fa-star-o fa-2x"
         fullSymbol="fa fa-star fa-2x"
         fractions={2}
         initialRating={yourRating}
       />
-      <p>Your rating: {yourRating}</p>
-      <p>Total rating: {rating}</p>
-      <p>{reviewNumber} reviews</p>
+      <p>Your rating: {yourRating}</p> */}
     </div>
   );
 };

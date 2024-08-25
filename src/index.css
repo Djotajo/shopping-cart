@@ -64,3 +64,14 @@ a {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 1001; /* Ensures the modal content is above the overlay */
 }
+
+.rating {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.generalRating,
+.yourRating {
+  gap: 10px;
+}
