@@ -1,28 +1,21 @@
-import React, { useState } from "react";
 import Rating from "react-rating";
-import RatingWindow from "./ratingWindow";
+import { useState } from "react";
 
-const StarRating = ({ currentRating, quantity }) => {
-  const [rating, setRating] = useState(currentRating);
+function RatingWindow({ onClose }) {
+  const [rating, setRating] = useState(4);
   const [yourRating, setYourRating] = useState(0);
   const [prevRating, setPrevRating] = useState(0);
-  const [reviewNumber, setReviewNumber] = useState(quantity);
+  const [reviewNumber, setReviewNumber] = useState(150);
   const [rated, setRated] = useState(false);
-  const displayRatingWindow = document.querySelector(".ratingWindow");
-  const [isRatingWindowVisible, setRatingWindowVisible] = useState(false);
-  console.log(reviewNumber);
-
-  //   function changeRating(){
-  //     let newRating = rating + rate
-  //   }
+  const [isRatingWindowVisible, setRatingWindowVisible] = useState(true);
 
   return (
-    <div>
+    <div className="ratingWindow">
       <Rating
         emptySymbol="fa fa-star-o fa-2x"
         fullSymbol="fa fa-star fa-2x"
         fractions={2}
-        initialRating={currentRating}
+        initialRating={rating}
         // {rated === false ? 0 : 5}
         onChange={(rate) => {
           if (rated === false) {
@@ -52,22 +45,9 @@ const StarRating = ({ currentRating, quantity }) => {
           // setRated(rated ? true : false)
         }}
       />
-      <Rating
-        emptySymbol="fa fa-star-o fa-2x"
-        fullSymbol="fa fa-star fa-2x"
-        fractions={2}
-        initialRating={yourRating}
-      />
-      <p>Your rating: {yourRating}</p>
-      <p>Total rating: {rating}</p>
-      <p>{reviewNumber} reviews</p>
+      <button onClick={onClose}>Close</button>
     </div>
   );
-};
+}
 
-export default StarRating;
-
-// onChange={(rate) => {
-//   setRating(rated === false ? rate : (rating * reviewNumber + rate) / (reviewNumber + 1));
-//   setReviewNumber(rated === false ? 1 : reviewNumber + 1);
-// }}
+export default RatingWindow;

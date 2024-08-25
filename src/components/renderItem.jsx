@@ -1,4 +1,7 @@
 import StarRating from "./starRating";
+import RatingWindow from "./ratingWindow";
+import { useState } from "react";
+import Modal from "./modal";
 
 function RenderItem({
   category,
@@ -10,6 +13,11 @@ function RenderItem({
   count,
   title,
 }) {
+  const [isRatingWindowVisible, setRatingWindowVisible] = useState(false);
+  const handleCloseWindow = () => {
+    setRatingWindowVisible(false);
+  };
+
   return (
     <div className="item">
       {/* <p>{category}</p> */}
@@ -20,6 +28,13 @@ function RenderItem({
       <p>${price}</p>
 
       <StarRating currentRating={rating} quantity={count} />
+
+      <button onClick={() => setRatingWindowVisible(true)}>Rate me!</button>
+      {isRatingWindowVisible && (
+        <Modal onClose={handleCloseWindow}>
+          <RatingWindow onClose={handleCloseWindow} />
+        </Modal>
+      )}
     </div>
   );
 }

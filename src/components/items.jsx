@@ -11,7 +11,6 @@ import RenderItem from "./renderItem";
 
 function Items() {
   const [items, setItems] = useState([]);
-  console.log(items);
 
   useEffect(() => {
     const getItems = async () => {
