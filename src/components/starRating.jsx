@@ -17,6 +17,10 @@ const StarRating = ({
   handleUpdateCurrentRating,
   handleSetPrevRating,
   handleSetRated,
+  isUpdateRatingWindowVisible,
+  handleOpenUpdateWindow,
+  handleCloseUpdateWindow,
+  handleSetReviewNumber,
 }) => {
   return (
     <div className="rating">
@@ -44,65 +48,36 @@ const StarRating = ({
                 handleSetPrevRating={handleSetPrevRating}
                 rated={rated}
                 handleSetRated={handleSetRated}
+                handleSetReviewNumber={handleSetReviewNumber}
               />
             </Modal>
           )}
         </>
       ) : (
         <>
-          <button className="yourRating" onClick={handleOpenWindow}>
+          <button className="yourRating" onClick={handleOpenUpdateWindow}>
             <span className="fa fa-star-o"></span>
             <span>{`${yourRating} / 5`}</span>
           </button>
-          {/* {isRatingWindowVisible && (
-          <Modal onClose={handleCloseWindow}>
-            <RatingWindow
-              onClose={handleCloseWindow}
-              yourRating={yourRating}
-              handleSetYourRating={handleSetYourRating}
-              handleSetCurrentRating={handleSetCurrentRating}
-              currentRating={currentRating}
-              prevRating={prevRating}
-              handleUpdateCurrentRating={handleUpdateCurrentRating}
-              handleSetPrevRating={handleSetPrevRating}
-              rated={rated}
-              handleSetRated={handleSetRated}
-            />
-          </Modal>
-        )} */}
+          {isUpdateRatingWindowVisible && (
+            <Modal onClose={handleCloseUpdateWindow}>
+              <RatingWindow
+                onClose={handleCloseUpdateWindow}
+                yourRating={yourRating}
+                handleSetYourRating={handleSetYourRating}
+                handleSetCurrentRating={handleSetCurrentRating}
+                currentRating={currentRating}
+                prevRating={prevRating}
+                handleUpdateCurrentRating={handleUpdateCurrentRating}
+                handleSetPrevRating={handleSetPrevRating}
+                rated={rated}
+                handleSetRated={handleSetRated}
+                handleCloseUpdateWindow={handleCloseUpdateWindow}
+              />
+            </Modal>
+          )}
         </>
       )}
-      {/* <div className="yourRating">
-        <span className="fa fa-star-o"></span>
-        <span>{`${yourRating} / 5`}</span>
-      </div> */}
-      {/* <Rating
-        emptySymbol="fa fa-star-o fa-2x"
-        fullSymbol="fa fa-star fa-2x"
-        fractions={2}
-        initialRating={currentRating}
-        onChange={(rate) => {
-          if (rated === false) {
-            setRating((rating * reviewNumber + rate) / (reviewNumber + 1));
-            setReviewNumber(reviewNumber + 1);
-            setRated(true);
-            setYourRating(rate);
-          } else {
-            setPrevRating(yourRating);
-            setYourRating(rate);
-            setRating(
-              (rating * reviewNumber - prevRating + rate) / reviewNumber
-            );
-          }
-        }}
-      /> */}
-      {/* <Rating
-        emptySymbol="fa fa-star-o fa-2x"
-        fullSymbol="fa fa-star fa-2x"
-        fractions={2}
-        initialRating={yourRating}
-      />
-      <p>Your rating: {yourRating}</p> */}
     </div>
   );
 };

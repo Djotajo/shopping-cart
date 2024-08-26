@@ -76,14 +76,17 @@ a {
   gap: 10px;
 }
 
-.rateButton {
+.rateButton,
+.yourRating {
   background-color: transparent;
-  border: none; /* Removes the border */
-  color: inherit; /* Keeps the text color consistent with the parent element */
-  padding: 10px 20px; /* Adds some padding for better clickability */
-  cursor: pointer; /* Changes the cursor to a pointer when hovering */
+  border: none;
+  color: inherit;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
-.rateButton:hover {
-  opacity: 0.8; /* Optional: Slightly change opacity on hover for feedback */
+.rateButton:hover,
+.yourRating:hover {
+  opacity: 0.8;
+  color: white;
 }

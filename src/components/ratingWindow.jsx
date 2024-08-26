@@ -6,19 +6,14 @@ function RatingWindow({
   yourRating,
   handleSetYourRating,
   handleSetCurrentRating,
-  currentRating,
-  prevRating,
   handleUpdateCurrentRating,
   handleSetPrevRating,
   rated,
   handleSetRated,
+  handleSetReviewNumber,
+  handleCloseUpdateWindow,
 }) {
-  //   const [rating, setRating] = useState(4);
-  //   const [yourRating, setYourRating] = useState(0);
-  //   const [prevRating, setPrevRating] = useState(0);
   const [reviewNumber, setReviewNumber] = useState(150);
-  //   const [rated, setRated] = useState(false);
-  const [isRatingWindowVisible, setRatingWindowVisible] = useState(true);
 
   return (
     <div className="ratingWindow">
@@ -27,35 +22,21 @@ function RatingWindow({
         fullSymbol="fa fa-star fa-2x"
         fractions={2}
         initialRating={yourRating}
-        // {rated === false ? 0 : 5}
         onChange={(rate) => {
+          console.log("Before changes:", { yourRating, rated, reviewNumber });
           if (rated === false) {
-            // Handle the case where rated is false
             handleSetCurrentRating(rate);
-            // setRating(
-            //   (currentRating * reviewNumber + rate) / (reviewNumber + 1)
-            // );
-            setReviewNumber(reviewNumber + 1); // Assuming this is the first rating
+            setReviewNumber(reviewNumber + 1);
             handleSetRated();
             handleSetYourRating(rate);
+            handleSetReviewNumber();
           } else {
             handleSetPrevRating(yourRating);
             handleSetYourRating(rate);
             handleUpdateCurrentRating(rate);
-            console.log(yourRating);
-            // Handle the case where rated is true
-            // setRating((rating * reviewNumber + rate) / (reviewNumber + 1));
-            // setReviewNumber(reviewNumber + 1);
+            handleCloseUpdateWindow();
           }
-
-          // setRating(
-          //   rated === false
-          //     ? rate
-          //     : (rating * reviewNumber + rate) / (reviewNumber + 1)
-          // );
-          // setReviewNumber(rated === false ? reviewNumber : reviewNumber + 1);
-
-          // setRated(rated ? true : false)
+          console.log("After changes:", { yourRating, rated, reviewNumber });
         }}
       />
       <button onClick={onClose}>Close</button>

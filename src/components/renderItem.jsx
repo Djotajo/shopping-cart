@@ -3,17 +3,10 @@ import RatingWindow from "./ratingWindow";
 import { useState } from "react";
 import Modal from "./modal";
 
-function RenderItem({
-  category,
-  description,
-  id,
-  image,
-  price,
-  rating,
-  count,
-  title,
-}) {
+function RenderItem({ description, id, image, price, rating, count, title }) {
   const [isRatingWindowVisible, setRatingWindowVisible] = useState(false);
+  const [isUpdateRatingWindowVisible, setUpdateRatingWindowVisible] =
+    useState(false);
 
   const [currentRating, setcurrentRating] = useState(rating);
   const [yourRating, setYourRating] = useState(0);
@@ -27,6 +20,14 @@ function RenderItem({
 
   const handleOpenWindow = () => {
     setRatingWindowVisible(true);
+  };
+
+  const handleCloseUpdateWindow = () => {
+    setUpdateRatingWindowVisible(false);
+  };
+
+  const handleOpenUpdateWindow = () => {
+    setUpdateRatingWindowVisible(true);
   };
 
   const handleSetRated = () => {
@@ -53,6 +54,10 @@ function RenderItem({
     setPrevRating(rating);
   };
 
+  const handleSetReviewNumber = () => {
+    setReviewNumber(reviewNumber + 1);
+  };
+
   return (
     <div className="item">
       <p>{title}</p>
@@ -73,6 +78,10 @@ function RenderItem({
         handleUpdateCurrentRating={handleUpdateCurrentRating}
         handleSetPrevRating={handleSetPrevRating}
         handleSetRated={handleSetRated}
+        isUpdateRatingWindowVisible={isUpdateRatingWindowVisible}
+        handleCloseUpdateWindow={handleCloseUpdateWindow}
+        handleOpenUpdateWindow={handleOpenUpdateWindow}
+        handleSetReviewNumber={handleSetReviewNumber}
       />
     </div>
   );
