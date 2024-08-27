@@ -12,6 +12,7 @@ function RatingWindow({
   handleSetRated,
   handleSetReviewNumber,
   handleCloseUpdateWindow,
+  handleRemoveRating,
 }) {
   const [reviewNumber, setReviewNumber] = useState(150);
 
@@ -27,9 +28,9 @@ function RatingWindow({
           if (rated === false) {
             handleSetCurrentRating(rate);
             setReviewNumber(reviewNumber + 1);
-            handleSetRated();
             handleSetYourRating(rate);
             handleSetReviewNumber();
+            handleSetRated();
           } else {
             handleSetPrevRating(yourRating);
             handleSetYourRating(rate);
@@ -39,7 +40,9 @@ function RatingWindow({
           console.log("After changes:", { yourRating, rated, reviewNumber });
         }}
       />
-      <button onClick={onClose}>Close</button>
+      {!rated && <button onClick={onClose}>Cancel</button>}
+      {rated && <button onClick={handleRemoveRating}>Remove rating</button>}
+      {/* <button onClick={handleRemoveRating}>Remove rating</button> */}
     </div>
   );
 }

@@ -14,6 +14,14 @@ function RenderItem({ description, id, image, price, rating, count, title }) {
   const [reviewNumber, setReviewNumber] = useState(count);
   const [rated, setRated] = useState(false);
 
+  const handleRemoveRating = () => {
+    setRated(false);
+    setcurrentRating(rating);
+    setReviewNumber(count);
+    // handleCloseUpdateWindow();
+    handleCloseWindow();
+  };
+
   const handleCloseWindow = () => {
     setRatingWindowVisible(false);
   };
@@ -32,6 +40,10 @@ function RenderItem({ description, id, image, price, rating, count, title }) {
 
   const handleSetRated = () => {
     setRated(true);
+  };
+
+  const handleRemoveRated = () => {
+    setRated(false);
   };
 
   const handleSetCurrentRating = (rating) => {
@@ -82,6 +94,7 @@ function RenderItem({ description, id, image, price, rating, count, title }) {
         handleCloseUpdateWindow={handleCloseUpdateWindow}
         handleOpenUpdateWindow={handleOpenUpdateWindow}
         handleSetReviewNumber={handleSetReviewNumber}
+        handleRemoveRating={handleRemoveRating}
       />
     </div>
   );

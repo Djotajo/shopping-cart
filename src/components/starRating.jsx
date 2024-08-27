@@ -21,6 +21,7 @@ const StarRating = ({
   handleOpenUpdateWindow,
   handleCloseUpdateWindow,
   handleSetReviewNumber,
+  handleRemoveRating,
 }) => {
   return (
     <div className="rating">
@@ -49,6 +50,7 @@ const StarRating = ({
                 rated={rated}
                 handleSetRated={handleSetRated}
                 handleSetReviewNumber={handleSetReviewNumber}
+                handleRemoveRating={handleRemoveRating}
               />
             </Modal>
           )}
@@ -73,6 +75,7 @@ const StarRating = ({
                 rated={rated}
                 handleSetRated={handleSetRated}
                 handleCloseUpdateWindow={handleCloseUpdateWindow}
+                handleRemoveRating={handleRemoveRating}
               />
             </Modal>
           )}
