@@ -64,7 +64,7 @@ const StarRating = ({
           {isUpdateRatingWindowVisible && (
             <Modal onClose={handleCloseUpdateWindow}>
               <RatingWindow
-                onClose={handleCloseUpdateWindow}
+                // onClose={handleCloseUpdateWindow}
                 yourRating={yourRating}
                 handleSetYourRating={handleSetYourRating}
                 handleSetCurrentRating={handleSetCurrentRating}

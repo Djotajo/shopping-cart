@@ -31,17 +31,21 @@ function RatingWindow({
             handleSetYourRating(rate);
             handleSetReviewNumber();
             handleSetRated();
+            onClose();
+            console.log(rated);
           } else {
             handleSetPrevRating(yourRating);
             handleSetYourRating(rate);
             handleUpdateCurrentRating(rate);
             handleCloseUpdateWindow();
+            console.log(rated);
           }
           console.log("After changes:", { yourRating, rated, reviewNumber });
         }}
       />
-      {!rated && <button onClick={onClose}>Cancel</button>}
       {rated && <button onClick={handleRemoveRating}>Remove rating</button>}
+      {!rated && <button onClick={onClose}>Cancel</button>}
+
       {/* <button onClick={handleRemoveRating}>Remove rating</button> */}
     </div>
   );

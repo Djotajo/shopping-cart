@@ -20,6 +20,8 @@ function RenderItem({ description, id, image, price, rating, count, title }) {
     setReviewNumber(count);
     // handleCloseUpdateWindow();
     handleCloseWindow();
+    handleCloseUpdateWindow();
+    console.log(isUpdateRatingWindowVisible);
   };
 
   const handleCloseWindow = () => {
