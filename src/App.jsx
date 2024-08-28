@@ -6,6 +6,12 @@ import Items from "./components/items";
 import "./App.css";
 
 function App() {
+  const [cart, setCart] = useState(["test"]);
+
+  const addToCart = (item) => {
+    setCart([...cart, item]);
+  };
+
   return (
     <>
       <nav>
@@ -15,7 +21,7 @@ function App() {
           <NavItem name="cart" link="/cart"></NavItem>
         </ul>
       </nav>
-      <Outlet></Outlet>
+      <Outlet context={{ cart, addToCart }}></Outlet>
     </>
   );
 }

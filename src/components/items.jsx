@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import RenderItem from "./renderItem";
+import AddToCartButton from "./addToCartButton";
+import { useOutletContext } from "react-router-dom";
 
 // async function getItems() {
 //   const response = await fetch("https://fakestoreapi.com/products");
@@ -11,6 +13,7 @@ import RenderItem from "./renderItem";
 
 function Items() {
   const [items, setItems] = useState([]);
+  const { addToCart } = useOutletContext();
 
   useEffect(() => {
     const getItems = async () => {
@@ -25,17 +28,20 @@ function Items() {
   let list;
   items
     ? (list = items.map((item) => (
-        <RenderItem
-          category={item.category}
-          description={item.description}
-          id={item.id}
-          image={item.image}
-          price={item.price}
-          rating={item.rating.rate}
-          count={item.rating.count}
-          title={item.title}
-          key={item.id}
-        />
+        <div>
+          <RenderItem
+            category={item.category}
+            description={item.description}
+            id={item.id}
+            image={item.image}
+            price={item.price}
+            rating={item.rating.rate}
+            count={item.rating.count}
+            title={item.title}
+            key={item.id}
+          />
+          <AddToCartButton addItem={item} />
+        </div>
       )))
     : null;
   //   console.log(list);
