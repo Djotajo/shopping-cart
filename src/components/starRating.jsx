@@ -64,7 +64,6 @@ const StarRating = ({
           {isUpdateRatingWindowVisible && (
             <Modal onClose={handleCloseUpdateWindow}>
               <RatingWindow
-                // onClose={handleCloseUpdateWindow}
                 yourRating={yourRating}
                 handleSetYourRating={handleSetYourRating}
                 handleSetCurrentRating={handleSetCurrentRating}
@@ -86,8 +85,3 @@ const StarRating = ({
 };
 
 export default StarRating;
-
-// onChange={(rate) => {
-//   setRating(rated === false ? rate : (rating * reviewNumber + rate) / (reviewNumber + 1));
-//   setReviewNumber(rated === false ? 1 : reviewNumber + 1);
-// }}

@@ -18,10 +18,8 @@ function RenderItem({ description, id, image, price, rating, count, title }) {
     setRated(false);
     setcurrentRating(rating);
     setReviewNumber(count);
-    // handleCloseUpdateWindow();
     handleCloseWindow();
     handleCloseUpdateWindow();
-    console.log(isUpdateRatingWindowVisible);
   };
 
   const handleCloseWindow = () => {
@@ -42,10 +40,6 @@ function RenderItem({ description, id, image, price, rating, count, title }) {
 
   const handleSetRated = () => {
     setRated(true);
-  };
-
-  const handleRemoveRated = () => {
-    setRated(false);
   };
 
   const handleSetCurrentRating = (rating) => {
