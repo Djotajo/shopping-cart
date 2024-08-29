@@ -3,6 +3,7 @@ import RenderCartItem from "./renderCartItem";
 
 function Cart() {
   const { cart } = useOutletContext();
+  const { emptyCart } = useOutletContext();
   return (
     <div>
       <h2>Your Cart</h2>
@@ -20,6 +21,7 @@ function Cart() {
           ))}
         </li>
       </ul>
+      <button onClick={emptyCart}>Empty Cart</button>
     </div>
   );
 }

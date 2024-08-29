@@ -6,11 +6,23 @@ import Items from "./components/items";
 import "./App.css";
 
 function App() {
-  const [cart, setCart] = useState(["test"]);
+  const [cart, setCart] = useState([]);
 
   const addToCart = (item) => {
     setCart([...cart, item]);
   };
+
+  function emptyCart() {
+    setCart([]);
+  }
+
+  function totalPrice(cart) {
+    let price;
+    if (cart != []) {
+      price = cart.reduce((total, item) => total + item.price, 0).toFixed(2);
+    }
+    return price;
+  }
 
   return (
     <>
@@ -18,10 +30,11 @@ function App() {
         <ul>
           <NavItem name="home" link="/home"></NavItem>
           <NavItem name="shop" link="/shop"></NavItem>
-          <NavItem name="cart" link="/cart"></NavItem>
+          <NavItem name="cart" link="/cart"></NavItem>({cart.length}) $
+          {totalPrice(cart)}
         </ul>
       </nav>
-      <Outlet context={{ cart, addToCart }}></Outlet>
+      <Outlet context={{ cart, addToCart, emptyCart }}></Outlet>
     </>
   );
 }
