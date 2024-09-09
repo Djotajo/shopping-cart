@@ -24,17 +24,28 @@ nav {
   background-color: white;
   height: 10vh;
   display: flex;
-  justify-content: center;
+  /* justify-content: space-around; */
+  /* justify-content: center; */
   align-items: center;
 }
 
 nav ul {
   display: flex;
+  width: 100%;
   gap: 1em;
-  justify-content: center;
+  justify-content: space-around;
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+nav ul li {
+  display: flex;
+}
+
+nav ul :nth-child(2) {
+  display: flex;
+  gap: 3em;
 }
 
 .homeContainer {
@@ -74,10 +85,24 @@ a {
 }
 
 .items {
+  height: 90vh;
+  overflow-y: scroll;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 1fr;
   gap: 1em;
+  margin: auto;
+  /* background-color: greenyellow; */
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.cartContainer {
+  height: 90vh;
+  overflow-y: scroll;
+  margin: auto;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .item {

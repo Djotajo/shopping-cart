@@ -5,7 +5,7 @@ function Cart() {
   const { cart } = useOutletContext();
   const { emptyCart } = useOutletContext();
   return (
-    <div>
+    <div className="cartContainer">
       <h2>Your Cart</h2>
       <ul>
         <li>

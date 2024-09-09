@@ -28,14 +28,19 @@ function App() {
     <>
       <nav>
         <ul>
-          <NavItem name="home" link="/home"></NavItem>
-          <NavItem name="shop" link="/shop"></NavItem>
-          <NavItem name="cart" link="/cart"></NavItem>({cart.length}) $
-          {totalPrice(cart)}
+          <li>logo</li>
+          <li>
+            <NavItem name="home" link="/home"></NavItem>
+            <NavItem name="shop" link="/shop"></NavItem>
+          </li>
+          <li>
+            {" "}
+            <NavItem name="cart" link="/cart"></NavItem>({cart.length}) $
+            {totalPrice(cart)}
+          </li>
         </ul>
       </nav>
       <Outlet context={{ cart, addToCart, emptyCart }}></Outlet>
-      <footer></footer>
     </>
   );
 }
