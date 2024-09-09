@@ -1,12 +1,31 @@
-img {
+#root {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* TEST TEST TEST */
+
+.item img {
   width: 100px;
   height: 100px;
 }
 
+/* TEST TEST TEST */
+
 body {
-  width: 80%;
+  /* width: 80%; */
+  height: 100%;
   margin: auto;
   background-color: gray;
+}
+
+nav {
+  background-color: white;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav ul {
@@ -14,6 +33,40 @@ nav ul {
   gap: 1em;
   justify-content: center;
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.homeContainer {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  height: 90vh;
+}
+
+/* .homeContainer img {
+  display: block;
+  width: 50%;
+  height: 90vh;
+  object-fit: cover;
+} */
+
+.homeImageContainer {
+  display: block;
+  width: 45%;
+  height: 100%;
+  background-image: url("https://images.unsplash.com/photo-1517042244917-7498ac155a51?q=80&w=2264&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-position: center;
+  background-size: cover;
+}
+
+.homeTextContainer {
+  padding: 2em;
+}
+
+.homeText {
+  width: 80%;
 }
 
 a {

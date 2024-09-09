@@ -35,6 +35,7 @@ function App() {
         </ul>
       </nav>
       <Outlet context={{ cart, addToCart, emptyCart }}></Outlet>
+      <footer></footer>
     </>
   );
 }
