@@ -4,6 +4,8 @@ import RenderItem from "./renderItem";
 import AddToCartButton from "./addToCartButton";
 import { useOutletContext } from "react-router-dom";
 
+import { v4 as uuidv4 } from "uuid";
+
 // async function getItems() {
 //   const response = await fetch("https://fakestoreapi.com/products");
 //   const responseJson = await response.json();
@@ -38,7 +40,7 @@ function Items() {
             rating={item.rating.rate}
             count={item.rating.count}
             title={item.title}
-            key={item.id}
+            key={uuidv4()}
           />
           <AddToCartButton addItem={item} />
         </div>

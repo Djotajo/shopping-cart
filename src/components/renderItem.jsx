@@ -69,7 +69,7 @@ function RenderItem({ description, id, image, price, rating, count, title }) {
   return (
     <div className="item">
       <p>{title}</p>
-      <img src={image} alt={description} />
+      <img src={image} alt={title} />
       <p>${price}</p>
 
       <StarRating

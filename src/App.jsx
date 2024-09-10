@@ -4,13 +4,19 @@ import { Outlet } from "react-router-dom";
 import NavItem from "./components/navItem";
 import Items from "./components/items";
 import "./App.css";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [cart, setCart] = useState([]);
 
   const addToCart = (item) => {
-    setCart([...cart, item]);
+    const itemWithKey = { ...item, key: uuidv4() };
+    setCart([...cart, itemWithKey]);
   };
+
+  function removeFromCart(itemId) {
+    setCart(cart.filter((item) => item.key !== itemId));
+  }
 
   function emptyCart() {
     setCart([]);
@@ -28,7 +34,7 @@ function App() {
     <>
       <nav>
         <ul>
-          <li>logo</li>
+          <li className="logo">FRIENDSHOP</li>
           <li>
             <NavItem name="home" link="/home"></NavItem>
             <NavItem name="shop" link="/shop"></NavItem>
@@ -40,7 +46,7 @@ function App() {
           </li>
         </ul>
       </nav>
-      <Outlet context={{ cart, addToCart, emptyCart }}></Outlet>
+      <Outlet context={{ cart, addToCart, removeFromCart, emptyCart }}></Outlet>
     </>
   );
 }
