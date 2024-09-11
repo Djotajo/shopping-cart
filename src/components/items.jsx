@@ -30,7 +30,7 @@ function Items() {
   let list;
   items
     ? (list = items.map((item) => (
-        <div>
+        <div className="item">
           <RenderItem
             category={item.category}
             description={item.description}

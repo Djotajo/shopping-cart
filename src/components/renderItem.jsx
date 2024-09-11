@@ -2,6 +2,7 @@ import StarRating from "./starRating";
 import RatingWindow from "./ratingWindow";
 import { useState } from "react";
 import Modal from "./modal";
+import AddToCartButton from "./addToCartButton";
 
 function RenderItem({ description, id, image, price, rating, count, title }) {
   const [isRatingWindowVisible, setRatingWindowVisible] = useState(false);
@@ -67,7 +68,7 @@ function RenderItem({ description, id, image, price, rating, count, title }) {
   };
 
   return (
-    <div className="item">
+    <>
       <p>{title}</p>
       <img src={image} alt={title} />
       <p>${price}</p>
@@ -92,7 +93,7 @@ function RenderItem({ description, id, image, price, rating, count, title }) {
         handleSetReviewNumber={handleSetReviewNumber}
         handleRemoveRating={handleRemoveRating}
       />
-    </div>
+    </>
   );
 }
 
