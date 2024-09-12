@@ -69,7 +69,7 @@ function RenderItem({ description, id, image, price, rating, count, title }) {
 
   return (
     <>
-      <p>{title}</p>
+      <p title={title}>{title}</p>
       <img src={image} alt={title} />
       <p>${price}</p>
 

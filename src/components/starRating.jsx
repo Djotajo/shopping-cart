@@ -27,9 +27,11 @@ const StarRating = ({
     <div className="rating">
       <div className="generalRating">
         <span className="fa fa-star"></span>
-        <span>{`${currentRating.toFixed(1)} / 5`}</span>
-        <br />
-        <span>{quantity}</span>
+        <span>
+          {`${currentRating.toFixed(1)} / 5`} ({quantity})
+        </span>
+        {/* <br /> */}
+        {/* <span>({quantity})</span> */}
       </div>
       {rated === false ? (
         <>
