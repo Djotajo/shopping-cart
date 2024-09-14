@@ -39,7 +39,7 @@ function RatingWindow({
           }
         }}
       />
-      {rated && <button onClick={handleRemoveRating}>Remove rating</button>}
+      {rated && <button onClick={handleRemoveRating}>Remove</button>}
       {!rated && <button onClick={onClose}>Cancel</button>}
     </div>
   );

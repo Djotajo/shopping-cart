@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Home() {
   return (
     <>
@@ -9,7 +11,10 @@ function Home() {
             <h1>You want it, we have it</h1>
             <h2>Why go out and be bothered by the elements?</h2>
             <h2>Shop from the comfort of your home!</h2>
-            <button>Shop Now!</button>
+
+            <button>
+              <Link to="/shop">Shop Now!</Link>
+            </button>
           </div>
         </div>
       </div>
