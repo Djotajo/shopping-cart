@@ -9,9 +9,22 @@ import { v4 as uuidv4 } from "uuid";
 function App() {
   const [cart, setCart] = useState([]);
 
-  const addToCart = (item) => {
-    const itemWithKey = { ...item, key: uuidv4() };
-    setCart([...cart, itemWithKey]);
+  // const addToCart = (item, quantity = 1) => {
+  //   for (let n = 0; n < quantity; n++) {
+  //     const itemWithKey = { ...item, key: uuidv4() };
+  //     setCart([...cart, itemWithKey]);
+  //   }
+  // };
+
+  const addToCart = (item, quantity = 1) => {
+    const newItems = [];
+
+    for (let n = 0; n < quantity; n++) {
+      const itemWithKey = { ...item, key: uuidv4() };
+      newItems.push(itemWithKey); // Collect items in an array
+    }
+
+    setCart((prevCart) => [...prevCart, ...newItems]); // Update cart once with all new items
   };
 
   function removeFromCart(itemId) {
