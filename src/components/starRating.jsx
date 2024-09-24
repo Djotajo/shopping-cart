@@ -28,7 +28,7 @@ const StarRating = ({
       <div className="generalRating">
         <span className="fa fa-star"></span>
         <span>
-          {`${currentRating.toFixed(1)} / 5`} ({quantity})
+          {` ${currentRating.toFixed(1)}`} ({quantity})
         </span>
         {/* <br /> */}
         {/* <span>({quantity})</span> */}
@@ -36,7 +36,7 @@ const StarRating = ({
       {rated === false ? (
         <>
           <button className="rateButton" onClick={handleOpenWindow}>
-            <span className="fa fa-star-o"></span>Rate
+            <span className="fa fa-star-o"></span> Rate
           </button>
           {isRatingWindowVisible && (
             <Modal onClose={handleCloseWindow}>
@@ -61,7 +61,7 @@ const StarRating = ({
         <>
           <button className="yourRating" onClick={handleOpenUpdateWindow}>
             <span className="fa fa-star-o"></span>
-            <span>{`${yourRating} / 5`}</span>
+            <span> {`${yourRating}`}</span>
           </button>
           {isUpdateRatingWindowVisible && (
             <Modal onClose={handleCloseUpdateWindow}>

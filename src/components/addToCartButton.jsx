@@ -20,16 +20,21 @@ function AddToCartButton({ addItem }) {
   };
   return (
     <>
-      <label htmlFor={addItem.id}>Quantity</label>
-      <input
-        type="number"
-        id={addItem.id}
-        name="quantity"
-        min="1"
-        max="100"
-        value={quantity}
-        onChange={handleInputChange}
-      />
+      <div className="quantityDiv">
+        {" "}
+        <label htmlFor={addItem.id}>Quantity: </label>
+        <input
+          type="number"
+          id={addItem.id}
+          name="quantity"
+          min="1"
+          max="100"
+          value={quantity}
+          onChange={handleInputChange}
+          className="quantityInput"
+        />
+      </div>
+
       <button onClick={onClick}>Add to cart</button>
     </>
   );
