@@ -35,7 +35,9 @@ function AddToCartButton({ addItem }) {
         />
       </div>
 
-      <button onClick={onClick}>Add to cart</button>
+      <button onClick={onClick} className="addToCartButton">
+        Add to cart
+      </button>
     </>
   );
 }
