@@ -14,9 +14,8 @@ function Cart() {
 
       <div className="cartContainer">
         {cart.map((item) => (
-          <div className="item">
+          <div className="cartItemWrapper">
             <RenderCartItem
-              description={item.description}
               id={item.id}
               image={item.image}
               price={item.price}
@@ -28,6 +27,7 @@ function Cart() {
                 console.log(item.key);
                 removeFromCart(item.key);
               }}
+              className="removeFromCartButton"
             >
               Remove From Cart
             </button>

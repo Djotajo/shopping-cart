@@ -33,7 +33,6 @@ function Items() {
         <div className="item">
           <RenderItem
             category={item.category}
-            description={item.description}
             id={item.id}
             image={item.image}
             price={item.price}

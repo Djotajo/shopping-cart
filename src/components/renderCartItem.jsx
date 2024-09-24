@@ -1,10 +1,10 @@
-function RenderCartItem({ description, id, image, price, title }) {
+function RenderCartItem({ id, image, price, title }) {
   return (
-    <>
+    <div className="cartItem">
       <p>{title}</p>
-      <img src={image} alt={description} />
+      <img src={image} alt={title} />
       <p>${price}</p>
-    </>
+    </div>
   );
 }
 

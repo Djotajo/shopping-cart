@@ -4,7 +4,7 @@ import { useState } from "react";
 import Modal from "./modal";
 import AddToCartButton from "./addToCartButton";
 
-function RenderItem({ description, id, image, price, rating, count, title }) {
+function RenderItem({ id, image, price, rating, count, title }) {
   const [isRatingWindowVisible, setRatingWindowVisible] = useState(false);
   const [isUpdateRatingWindowVisible, setUpdateRatingWindowVisible] =
     useState(false);

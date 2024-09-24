@@ -114,7 +114,7 @@ a {
   overflow-y: scroll;
   display: grid;
   /* grid-template-columns: repeat(4, 1fr); */
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-columns: repeat(1, minmax(0, 1fr));
   grid-auto-rows: 1fr;
   gap: 1em;
   margin: auto;
@@ -143,6 +143,80 @@ a {
   flex: 1;
 }
 
+.cartItemWrapper {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  padding: 1em;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  object-fit: contain;
+  height: 100%;
+  justify-content: flex-start;
+  /* max-height: 350px; */
+  flex: 1;
+  gap: 1em;
+  width: 60%;
+}
+.cartItem {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  object-fit: contain;
+  height: 100%;
+  justify-content: flex-start;
+  max-height: 350px;
+  flex: 1;
+  gap: 1em;
+  width: 100%;
+}
+
+.cartItem img {
+  /* width: 100px;
+  height: 100px; */
+  width: 200px;
+  height: 200px;
+  /* height: auto; */
+  object-fit: contain;
+  z-index: 0;
+  order: -1;
+  border: 1px solid black;
+}
+
+.cartItem p:first-of-type {
+  font-size: 1em;
+  font-weight: 900;
+  width: 40%;
+  text-align: justify;
+}
+
+.cartItem p:last-of-type {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: justify;
+  margin-left: auto;
+  margin-right: 2em;
+}
+
+.removeFromCartButton {
+  margin-left: auto;
+  align-self: flex-start;
+  border: 0;
+  background-color: white;
+  text-decoration: underline;
+  margin-right: 2em;
+}
+
+.removeFromCartButton:hover {
+  opacity: 0.8;
+  color: grey;
+  cursor: grab;
+}
+
 .item > :first-child {
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -153,7 +227,8 @@ a {
   transition: transform 0.3s;
 }
 
-.item p {
+.item p,
+.cartItem p {
   margin: 0;
 }
 
