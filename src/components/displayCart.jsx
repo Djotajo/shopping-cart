@@ -33,7 +33,9 @@ function Cart() {
             </button>
           </div>
         ))}
-        <div className="cartTotal">empty cart</div>
+        <div className="cartTotal">
+          <button onClick={emptyCart}>Empty cart</button>
+        </div>
       </div>
     </>
   );
