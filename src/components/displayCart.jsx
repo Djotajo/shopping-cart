@@ -33,6 +33,7 @@ function Cart() {
             </button>
           </div>
         ))}
+        <div className="cartTotal">empty cart</div>
       </div>
     </>
   );
