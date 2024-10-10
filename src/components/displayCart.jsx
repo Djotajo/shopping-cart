@@ -7,6 +7,8 @@ function Cart() {
   const { cart } = useOutletContext();
   const { removeFromCart } = useOutletContext();
   const { emptyCart } = useOutletContext();
+  const { totalPrice } = useOutletContext();
+
   return (
     <>
       {/* <h2 className="cartTitle"> Your Cart</h2>
@@ -35,6 +37,7 @@ function Cart() {
         ))}
         <div className="cartTotal">
           <button onClick={emptyCart}>Empty cart</button>
+          <p>${totalPrice(cart)}</p>
         </div>
       </div>
     </>

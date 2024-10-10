@@ -59,7 +59,9 @@ function App() {
           </li>
         </ul>
       </nav>
-      <Outlet context={{ cart, addToCart, removeFromCart, emptyCart }}></Outlet>
+      <Outlet
+        context={{ cart, addToCart, removeFromCart, emptyCart, totalPrice }}
+      ></Outlet>
     </>
   );
 }
