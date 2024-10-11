@@ -37,7 +37,11 @@ function Cart() {
         ))}
         <div className="cartTotal">
           <button onClick={emptyCart}>Empty cart</button>
-          <p>${totalPrice(cart)}</p>
+          <p>
+            Subtotal ({cart.length} {cart.length === 1 ? "item" : "items"}): $
+            {totalPrice(cart)}
+          </p>
+          <button className="addToCartButton">Proceed to Checkout</button>
         </div>
       </div>
     </>
