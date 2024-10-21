@@ -11,9 +11,6 @@ function Cart() {
 
   return (
     <>
-      {/* <h2 className="cartTitle"> Your Cart</h2>
-      <button onClick={emptyCart}>Empty Cart</button> */}
-
       <div className="cartContainer">
         {cart.map((item) => (
           <div className="cartItemWrapper">
@@ -36,12 +33,26 @@ function Cart() {
           </div>
         ))}
         <div className="cartTotal">
-          <button onClick={emptyCart}>Empty cart</button>
           <p>
             Subtotal ({cart.length} {cart.length === 1 ? "item" : "items"}): $
             {totalPrice(cart)}
           </p>
-          <button className="addToCartButton">Proceed to Checkout</button>
+          <button
+            className="addToCartButton"
+            onClick={() => alert("Shopping Successful")}
+          >
+            Proceed to Checkout
+          </button>
+          <button
+            id="emptyCartButton"
+            onClick={() => {
+              if (confirm("Are you sure") === true) {
+                emptyCart();
+              }
+            }}
+          >
+            Empty cart
+          </button>
         </div>
       </div>
     </>

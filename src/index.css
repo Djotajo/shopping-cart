@@ -164,6 +164,23 @@ a {
   max-height: 350px;
 }
 
+#emptyCartButton {
+  align-self: flex-end;
+  border-radius: 24px;
+  padding: 10px 10px;
+  margin-top: 5px;
+  background-color: red;
+  color: white;
+  border: 0;
+  font-size: 1em;
+  /* width: 50%; */
+}
+
+#emptyCartButton:hover {
+  opacity: 0.8;
+  color: grey;
+}
+
 .item {
   display: flex;
   flex-direction: column;
