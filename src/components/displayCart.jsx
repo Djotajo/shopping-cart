@@ -44,6 +44,7 @@ function Cart() {
             Proceed to Checkout
           </button>
           <button
+            disabled={cart.length === 0 ? true : false}
             id="emptyCartButton"
             onClick={() => {
               if (confirm("Are you sure") === true) {

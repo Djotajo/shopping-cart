@@ -11,11 +11,8 @@
 /* TEST TEST TEST */
 
 .item img {
-  /* width: 100px;
-  height: 100px; */
   width: 50%;
   height: 50%;
-  /* height: auto; */
   object-fit: contain;
   z-index: 0;
 }
@@ -23,7 +20,6 @@
 /* TEST TEST TEST */
 
 body {
-  /* width: 80%; */
   height: 100%;
   margin: auto;
   background-color: gray;
@@ -33,8 +29,6 @@ nav {
   background-color: white;
   height: 10vh;
   display: flex;
-  /* justify-content: space-around; */
-  /* justify-content: center; */
   align-items: center;
 }
 
@@ -66,13 +60,6 @@ nav ul :nth-child(2) {
   height: 90vh;
 }
 
-/* .homeContainer img {
-  display: block;
-  width: 50%;
-  height: 90vh;
-  object-fit: cover;
-} */
-
 .homeImageContainer {
   display: block;
   width: 45%;
@@ -98,29 +85,14 @@ a {
   height: 90vh;
   overflow-y: scroll;
   display: grid;
-  /* grid-template-columns: repeat(4, 1fr); */
   grid-template-columns: repeat(5, minmax(0, 1fr));
   grid-auto-rows: 1fr;
   gap: 1em;
   margin: auto;
-  /* background-color: greenyellow; */
   padding-top: 1em;
   padding-left: 10%;
   padding-right: 10%;
 }
-
-/* .cartContainer {
-  height: 90vh;
-  overflow-y: scroll;
-  display: grid;
-  grid-auto-columns: repeat(2, minmax(0, 1fr));
-  grid-auto-rows: 1fr;
-  gap: 1em;
-  margin: auto;
-  padding-top: 1em;
-  padding-left: 10%;
-  padding-right: 10%;
-} */
 
 .cartContainer {
   height: 90vh;
@@ -137,7 +109,6 @@ a {
 
 .cartItemWrapper {
   grid-column: 1;
-  /* grid-row: span 1; */
 }
 
 .cartTotal {
@@ -157,7 +128,6 @@ a {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   object-fit: contain;
   height: 100%;
-  /* justify-content: flex-start; */
   justify-content: center;
   flex: 1;
   gap: 1em;
@@ -173,7 +143,6 @@ a {
   color: white;
   border: 0;
   font-size: 1em;
-  /* width: 50%; */
 }
 
 #emptyCartButton:hover {
@@ -189,7 +158,6 @@ a {
   align-items: center;
   text-align: center;
   background-color: white;
-  /* max-height: 35vh; */
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -232,11 +200,8 @@ a {
 }
 
 .cartItem img {
-  /* width: 100px;
-  height: 100px; */
   width: 200px;
   height: 200px;
-  /* height: auto; */
   object-fit: contain;
   z-index: 0;
   order: -1;
@@ -287,14 +252,6 @@ a {
 .cartItem p {
   margin: 0;
 }
-
-/* .cartContainer {
-  height: 90vh;
-  overflow-y: scroll;
-  margin: auto;
-  padding-left: 10%;
-  padding-right: 10%;
-} */
 
 .ratingWindow {
   position: fixed;
@@ -401,4 +358,19 @@ a {
 
 .cartTotal .addToCartButton {
   width: 30%;
+}
+
+@media screen and (max-width: 800px) {
+  .items {
+    height: 90vh;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 1em;
+    margin: auto;
+    padding-top: 1em;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 }
