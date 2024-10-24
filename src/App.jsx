@@ -5,6 +5,7 @@ import NavItem from "./components/navItem";
 import Items from "./components/items";
 import "./App.css";
 import { v4 as uuidv4 } from "uuid";
+import Navbar from "./components/navbar";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -45,7 +46,8 @@ function App() {
 
   return (
     <>
-      <nav>
+      <Navbar cart={cart} totalPrice={totalPrice} />
+      {/* <nav>
         <ul>
           <li className="logo">FRIENDSHOP</li>
           <li>
@@ -58,7 +60,7 @@ function App() {
             {totalPrice(cart)}
           </li>
         </ul>
-      </nav>
+      </nav> */}
       <Outlet
         context={{ cart, addToCart, removeFromCart, emptyCart, totalPrice }}
       ></Outlet>

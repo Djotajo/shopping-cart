@@ -38,7 +38,7 @@ function Cart() {
             {totalPrice(cart)}
           </p>
           <button
-            className="addToCartButton"
+            className="checkoutButton"
             onClick={() => alert("Shopping Successful")}
           >
             Proceed to Checkout
