@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 
-function NavItem({ name, link, cart, addToCart }) {
+function NavItem({ name, link, toggleMenu, cart, addToCart }) {
   return (
     <li id={name}>
-      <Link to={link}>{name}</Link>
+      <Link to={link} onClick={toggleMenu}>
+        {name}
+      </Link>
     </li>
   );
 }

@@ -10,15 +10,15 @@ const Navbar = ({ cart, totalPrice }) => {
 
   return (
     <nav>
-      <div className="logo">FRIENDSHOP</div>
+      <h1 className="logo">FRIENDSHOP</h1>
       <ul className={`menu ${isOpen ? "open" : ""}`}>
         <li className="nav-links">
-          <NavItem name="home" link="/home" />
-          <NavItem name="shop" link="/shop" />
+          <NavItem name="home" link="/home" toggleMenu={toggleMenu} />
+          <NavItem name="shop" link="/shop" toggleMenu={toggleMenu} />
         </li>
         <li className="cart">
-          <NavItem name="cart" link="/cart" /> ({cart.length}) $
-          {totalPrice(cart)}
+          <NavItem name="cart" link="/cart" toggleMenu={toggleMenu} /> (
+          {cart.length}) ${totalPrice(cart)}
         </li>
       </ul>
 

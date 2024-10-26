@@ -8,16 +8,12 @@
   font-style: normal;
 }
 
-/* TEST TEST TEST */
-
 .item img {
   width: 50%;
   height: 50%;
   object-fit: contain;
   z-index: 0;
 }
-
-/* TEST TEST TEST */
 
 body {
   height: 100%;
@@ -41,6 +37,7 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  font-size: 2em;
 }
 
 nav ul li {
@@ -85,7 +82,7 @@ a {
   height: 90vh;
   overflow-y: scroll;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-auto-rows: 1fr;
   gap: 1em;
   margin: auto;
@@ -98,8 +95,8 @@ a {
   height: 90vh;
   overflow-y: scroll;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
-  grid-auto-rows: auto; /* Automatically create rows based on content */
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
   gap: 1em;
   margin: auto;
   padding-top: 1em;
@@ -112,7 +109,7 @@ a {
 }
 
 .cartTotal {
-  grid-column: 2; /* Occupies the second column */
+  grid-column: 2;
   grid-row: 1;
   background-color: white;
 
@@ -272,27 +269,25 @@ a {
   align-self: center;
 }
 
-/* Fullscreen overlay */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000; /* Ensures the modal is on top */
+  z-index: 1000;
 }
 
-/* Modal content */
 .modal-content {
   background-color: white;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1001; /* Ensures the modal content is above the overlay */
+  z-index: 1001;
 }
 
 .rating {
@@ -326,7 +321,10 @@ a {
 .logo {
   font-weight: 900;
   font-size: 2em;
-  margin-left: 1em;
+  /* margin-left: 5em; */
+  text-align: center;
+  width: 30%;
+  font-size: 3em;
 }
 
 .quantityDiv {
@@ -363,9 +361,126 @@ a {
   width: 30%;
 }
 
+@media screen and (max-width: 1250px) {
+  .homeContainer {
+    text-align: center;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    height: 90vh;
+    overflow-y: auto;
+  }
+
+  .menu {
+    font-size: 1em;
+  }
+
+  .homeImageContainer {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://images.unsplash.com/photo-1517042244917-7498ac155a51?q=80&w=2264&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-position: bottom;
+    background-size: cover;
+  }
+
+  .homeTextContainer {
+    order: -1;
+  }
+
+  .homeText {
+    width: 100%;
+  }
+
+  .homeText button {
+    font-size: 1em;
+    font-weight: 900;
+    padding: 1em;
+    border-radius: 10px;
+  }
+
+  .items {
+    height: 90vh;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 1em;
+    margin: auto;
+    padding-top: 1em;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .cartItem {
+    flex-direction: column;
+  }
+
+  .cartContainer {
+    height: 90vh;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 1em;
+    margin: auto;
+    padding-top: 1em;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .cartItemWrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border: none;
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+  }
+
+  .cartItem {
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border: none;
+    max-height: 90%;
+  }
+
+  .cartItem p:first-of-type {
+    font-size: 1em;
+    font-weight: 900;
+    width: 80%;
+    text-align: center;
+  }
+
+  .cartItem p:last-of-type {
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: justify;
+    margin: auto;
+  }
+
+  .cartItem img {
+    max-width: 50%;
+    max-height: 50%;
+    object-fit: contain;
+    z-index: 0;
+    order: -1;
+    border: 1px solid black;
+  }
+}
+
 @media screen and (max-width: 800px) {
   body {
     background-color: white;
+  }
+
+  .logo {
+    font-size: 2em;
   }
 
   nav {
@@ -394,7 +509,6 @@ a {
     width: 100%;
     justify-content: center;
     gap: 0;
-    /* font-size: 1em; */
   }
 
   nav .menu.open > :nth-child(2),
@@ -404,12 +518,45 @@ a {
     width: 100%;
     gap: 0;
     align-items: center;
-    /* font-size: 2em; */
+  }
+
+  .homeContainer {
+    background-color: grey;
+    text-align: center;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    height: 90vh;
+  }
+
+  .homeImageContainer {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://images.unsplash.com/photo-1517042244917-7498ac155a51?q=80&w=2264&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-position: bottom;
+    background-size: cover;
+  }
+
+  .homeTextContainer {
+    order: -1;
+  }
+
+  .homeText {
+    width: 100%;
+  }
+
+  .homeText button {
+    font-size: 1em;
+    font-weight: 900;
+    padding: 1em;
+    border-radius: 10px;
   }
 
   .items {
     width: 100%;
-    height: auto;
     overflow-y: scroll;
     display: grid;
     grid-template-columns: 1fr;
@@ -418,7 +565,7 @@ a {
     margin: auto;
     padding: 0;
     background-color: white;
-    margin-top: 3em;
+    /* margin-top: 3em; */
   }
 
   .item {
@@ -432,11 +579,10 @@ a {
   }
 
   .cartContainer {
-    height: auto;
     overflow-y: scroll;
     display: grid;
     grid-template-columns: 1fr;
-    grid-auto-rows: 1fr; /* Automatically create rows based on content */
+    grid-auto-rows: 1fr;
     gap: 1em;
     margin: auto;
     padding-top: 1em;
@@ -493,7 +639,6 @@ a {
 
   .cartTotal {
     grid-column: 1;
-    /* grid-row: 1; */
     background-color: white;
 
     display: flex;
@@ -536,16 +681,45 @@ a {
 
   .menu {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+
+  nav {
+    position: relative;
+    z-index: 1;
+  }
+
+  .logo {
+    /* margin-bottom: 1em; */
+  }
+
+  .menu.open {
+    display: flex;
+    flex-direction: column;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+  }
+
+  nav .menu.open li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
 /* HAMBURGER TEST */
 
-nav {
+/* nav {
   position: relative;
   display: flex;
   align-items: center;
-}
+} */
 
 .menu {
   justify-content: space-between;
@@ -554,14 +728,13 @@ nav {
   margin-left: auto;
 }
 
-.menu.open {
-  display: flex; /* Show menu when open */
-  flex-direction: column; /* Stacked vertically when opened */
-  /* position: absolute; */
-  top: 100%; /* Place below the nav */
+/* .menu.open {
+  display: flex;
+  flex-direction: column;
+  top: 100%;
   left: 0;
   right: 0;
-  background-color: white; /* Ensure background color on open */
+  background-color: white;
 }
 
 nav .menu.open li {
@@ -569,21 +742,12 @@ nav .menu.open li {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-/* nav .menu :nth-child(2) {
-  display: flex;
-  gap: 3em;
-} */
-/* .logo {
-  font-size: 24px;
-  margin-right: auto;
 } */
 
 .nav-links,
 .cart {
   display: flex;
-  gap: 20px;
+  gap: 1em;
 }
 
 /* Hamburger menu button styles */
@@ -595,7 +759,7 @@ nav .menu.open li {
   justify-content: space-between;
   cursor: pointer;
   position: absolute;
-  right: 20px;
+  left: 20px;
   top: 20px;
 }
 
@@ -606,7 +770,7 @@ nav .menu.open li {
 }
 
 /* Media queries for responsiveness */
-@media (min-width: 768px) {
+@media (min-width: 800px) {
   .hamburger-menu {
     display: none; /* Hide hamburger button on larger screens */
   }
