@@ -573,6 +573,10 @@ a:visited {
     padding: 0;
   }
 
+  .ratingWindow {
+    font-size: 1em;
+  }
+
   nav .menu.open li {
     display: flex;
     width: 100%;
