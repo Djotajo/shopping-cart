@@ -575,6 +575,8 @@ a:visited {
 
   .ratingWindow {
     font-size: 1em;
+    width: 80%;
+    min-width: 350px;
   }
 
   nav .menu.open li {
