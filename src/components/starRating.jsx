@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Rating from "react-rating";
 import RatingWindow from "./ratingWindow";
 import Modal from "./modal";
 
@@ -30,8 +29,6 @@ const StarRating = ({
         <span>
           {` ${currentRating.toFixed(1)}`} ({quantity})
         </span>
-        {/* <br /> */}
-        {/* <span>({quantity})</span> */}
       </div>
       {rated === false ? (
         <>

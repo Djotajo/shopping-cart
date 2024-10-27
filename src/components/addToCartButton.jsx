@@ -6,13 +6,8 @@ function AddToCartButton({ addItem }) {
 
   let [quantity, setQuantity] = useState(1);
 
-  // const handleInputChange = () => {
-  //   let quantityInput = document.getElementById(addItem.id);
-  //   setQuantity(quantityInput.value);
-  // };
-
   const handleInputChange = (event) => {
-    setQuantity(event.target.value); // Directly update state from input change
+    setQuantity(event.target.value);
   };
 
   const onClick = () => {

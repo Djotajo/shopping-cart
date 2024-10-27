@@ -1,4 +1,4 @@
-function Modal({ onClose, children }) {
+function Modal({ children }) {
   return (
     <div className="modal-overlay">
       <div className="modal-content">{children}</div>

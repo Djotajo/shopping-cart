@@ -1,8 +1,5 @@
 import StarRating from "./starRating";
-import RatingWindow from "./ratingWindow";
 import { useState } from "react";
-import Modal from "./modal";
-import AddToCartButton from "./addToCartButton";
 
 function RenderItem({ id, image, price, rating, count, title }) {
   const [isRatingWindowVisible, setRatingWindowVisible] = useState(false);

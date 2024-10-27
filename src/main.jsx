@@ -7,12 +7,6 @@ import routes from "./components/routes";
 import "./normalize.css";
 import "./index.css";
 
-// createRoot(document.getElementById("root")).render(
-//   <StrictMode>
-//     <App />
-//   </StrictMode>
-// );
-
 const router = createBrowserRouter(routes);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

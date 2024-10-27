@@ -1,8 +1,6 @@
 import { useOutletContext } from "react-router-dom";
 import RenderCartItem from "./renderCartItem";
 
-import { v4 as uuidv4 } from "uuid";
-
 function Cart() {
   const { cart } = useOutletContext();
   const { removeFromCart } = useOutletContext();
