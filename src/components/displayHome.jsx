@@ -12,7 +12,7 @@ function Home() {
             <h2>Why go out and be bothered by the elements?</h2>
             <h2>Shop from the comfort of your home!</h2>
 
-            <button>
+            <button className="shopNow">
               <Link to="/shop">Shop Now!</Link>
             </button>
           </div>
