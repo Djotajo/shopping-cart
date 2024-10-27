@@ -88,11 +88,7 @@ a:visited {
   color: inherit;
 }
 
-/* #C08081
-#AA6A6A
-#A48484
-#B97A7A
-#D3A1A1 */
+/* Credit for shopNow button goes to Temani Afif https://codepen.io/t_afif/pen/abKyJNJ */
 
 .shopNow {
   --c: #c08081; /* the color*/
@@ -423,7 +419,8 @@ a:visited {
   }
 
   .menu {
-    font-size: 1em;
+    /* font-size: 1em; */
+    gap: 1em;
   }
 
   .homeImageContainer {
@@ -526,6 +523,23 @@ a:visited {
     z-index: 0;
     order: -1;
     border: 1px solid black;
+  }
+
+  .nav-links {
+    gap: 0;
+    margin-left: 0.5em;
+  }
+
+  .nav-links li {
+    margin-left: 0.5em;
+  }
+
+  .logo {
+    margin-right: 0.5em;
+  }
+
+  nav ul :nth-child(2) {
+    gap: 0em;
   }
 }
 
@@ -841,5 +855,15 @@ nav .menu.open li {
 
   .menu.closed {
     display: flex; /* Keep menu visible on larger screens */
+  }
+
+  .menu li li {
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .menu li li:hover {
+    color: #800020; /* Matches the button border color */
+    transform: translateX(5px); /* Slight movement to the right on hover */
+    text-decoration: underline; /* Adds a visual indicator */
   }
 }
