@@ -733,8 +733,22 @@ a:visited {
 
   .checkoutButton {
     width: 50%;
-    position: fixed;
     margin: 1em;
+  }
+
+  .cartContainer {
+    padding-top: 0;
+  }
+
+  .cartTotal {
+    position: sticky;
+    top: 0;
+    /* width: 100%; */
+  }
+
+  .cartTotal p,
+  .cartTotal button {
+    margin: 0;
   }
 
   .removeFromCartButton {
