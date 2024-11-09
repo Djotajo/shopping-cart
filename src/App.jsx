@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import "./App.css";
 import { v4 as uuidv4 } from "uuid";
 import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -40,6 +41,7 @@ function App() {
       <Outlet
         context={{ cart, addToCart, removeFromCart, emptyCart, totalPrice }}
       ></Outlet>
+      <Footer></Footer>
     </>
   );
 }
