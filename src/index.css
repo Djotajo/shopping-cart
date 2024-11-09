@@ -609,7 +609,8 @@ a:visited {
 
   .homeTextContainer {
     order: -1;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
+    height: 90vh;
   }
 
   .homeText {
