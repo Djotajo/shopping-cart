@@ -46,7 +46,6 @@ nav ul li {
 
 nav ul :nth-child(2) {
   display: flex;
-  gap: 3em;
 }
 
 .homeContainer {
@@ -96,20 +95,37 @@ footer > img {
 }
 
 footer {
-  position: absolute;
+  /* position: absolute;
   bottom: 10px;
-  width: 100%;
+  width: 100%; */
   box-sizing: border-box;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
-  margin-top: 3vh;
+  /* margin-top: 3vh; */
   margin-left: auto;
   margin-right: auto;
   gap: 1vh;
   color: #800020;
   background-color: transparent;
   overflow: hidden;
+}
+
+.heroLogo {
+  margin-left: 1em;
+  max-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.heroLogo h1 {
+  margin: 0;
+}
+
+.heroLogo h2 {
+  margin: 0;
 }
 
 footer p {
@@ -497,7 +513,7 @@ footer p:hover {
   }
 
   footer {
-    display: none;
+    /* display: none; */
   }
 
   .items {

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import NavItem from "./navItem";
+import Footer from "./footer";
 
 const Navbar = ({ cart, totalPrice }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,15 +11,22 @@ const Navbar = ({ cart, totalPrice }) => {
 
   return (
     <nav>
-      <h1 className="logo">FRIENDSHOP</h1>
+      <div className="heroLogo">
+        <h1 className="logo">FRIENDSHOP</h1>
+        <h2>
+          <Footer></Footer>
+        </h2>
+      </div>
       <ul className={`menu ${isOpen ? "open" : ""}`}>
         <li className="nav-links">
           <NavItem name="home" link="/home" toggleMenu={toggleMenu} />
           <NavItem name="shop" link="/shop" toggleMenu={toggleMenu} />
         </li>
         <li className="cart">
-          <NavItem name="cart" link="/cart" toggleMenu={toggleMenu} /> (
-          {cart.length}) ${totalPrice(cart)}
+          <NavItem name="cart" link="/cart" toggleMenu={toggleMenu} />{" "}
+          <p>
+            ({cart.length}) ${totalPrice(cart)}
+          </p>
         </li>
       </ul>
 
