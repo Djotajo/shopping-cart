@@ -729,6 +729,7 @@ footer p:hover {
     margin: auto;
     padding: 0;
     background-color: white;
+    height: 100%;
   }
 
   .item {
@@ -752,6 +753,7 @@ footer p:hover {
     padding-left: 0;
     padding-right: 0;
     background-color: white;
+    height: 100%;
   }
 
   .cartItemWrapper {
