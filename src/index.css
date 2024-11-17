@@ -6,6 +6,7 @@
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
+  height: 100%;
 }
 
 .item img {
@@ -16,7 +17,7 @@
 }
 
 body {
-  height: 100%;
+  height: 100vh;
   margin: auto;
   background-color: #eae7dc;
 }
@@ -621,7 +622,18 @@ footer p:hover {
     width: 100%;
     display: flex;
     align-items: center;
-    flex-direction: column;
+    justify-content: space-between;
+    /* margin: 0 1em; */
+    /* flex-direction: column; */
+  }
+
+  .hamburger-menu {
+    /* align-self: flex-start; */
+    margin-left: 1em;
+  }
+
+  .menu.open p {
+    margin: 5px;
   }
 
   nav .menu.open {
@@ -657,6 +669,10 @@ footer p:hover {
     gap: 0;
     align-items: center;
   }
+
+  .heroLogo {
+    margin-left: 0;
+  }
   /*  */
   .homeContainer {
     background-color: #eae7dc;
@@ -670,6 +686,7 @@ footer p:hover {
     background-image: url("https://images.unsplash.com/photo-1517042244917-7498ac155a51?q=80&w=2264&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-position: bottom;
     background-size: cover;
+    height: 100%;
   }
 
   .homeImageContainer {
@@ -903,9 +920,10 @@ footer p:hover {
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  position: absolute;
-  left: 20px;
-  top: 20px;
+  order: -1;
+  /* position: absolute; */
+  /* left: 20px;
+  top: 20px; */
 }
 
 .line {
